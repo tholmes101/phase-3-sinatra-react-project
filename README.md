@@ -83,6 +83,9 @@ After creating the project locally, you should also
 [create a repository on GitHub][create repo] to host your repo and help
 collaborate, if you're working with a partner.
 
+Here is the link for the React Frontend:
+https://github.com/tholmes101/react-app-nba-teams
+
 ### Fetch Example
 
 Your React app should make fetch requests to your Sinatra backend! Here's an
