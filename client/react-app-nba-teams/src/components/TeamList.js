@@ -11,6 +11,7 @@ function TeamList({ teams, onDeleteTeam, onUpdateTeam,uniforms }) {
           <TeamCard
             key={team.id}
             team={team}
+            uniform={team.uniforms}
             onDeleteTeam={onDeleteTeam}
             onUpdateTeam={onUpdateTeam}
           />

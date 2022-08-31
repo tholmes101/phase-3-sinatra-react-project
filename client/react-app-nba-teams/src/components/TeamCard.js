@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import {Card, Image} from "semantic-ui-react";
 
-function TeamCard({ team, uniforms, onDeleteTeam, onUpdateTeam }) {
-  const { id, name, image, rank,} = team;
- // const {uniforms} = uniform;
+function TeamCard({ team, uniform, onDeleteTeam, onUpdateTeam }) {
+  const { id, name, image, rank} = team;
 
   const [Likes, setLikes] = useState(true);
   const [updatedRank, setUpdatedRank] = useState(rank);
@@ -42,7 +41,9 @@ function TeamCard({ team, uniforms, onDeleteTeam, onUpdateTeam }) {
       <Card.Header>{name}</Card.Header>
       <Card.Description>
         Rank #: {rank}
-        
+        <ol>
+         Uniforms: {uniform.map (uniform => <li>Name: {uniform.name} | Number: {uniform.number}</li>)} 
+          </ol>
       </Card.Description>
   
       {Likes ? (
