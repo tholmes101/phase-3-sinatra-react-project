@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
     end
   
     post "/teams" do
-      Team.create(params).to_json
+      Team.create(params).to_json(include: :uniforms)
     end
   
     delete "/teams/:id" do
