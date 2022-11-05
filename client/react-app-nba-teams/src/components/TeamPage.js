@@ -3,13 +3,14 @@ import NewTeamForm from "./NewTeamForm";
 import TeamList from "./TeamList";
 import Search from "./Search";
 
+// Displays a list of NBA teams provided from the JSON backend data.
 function TeamPage() {
   const [teams, setTeams] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+ 
   useEffect(() => {
     fetch("http://localhost:9292/teams")
-      .then((r) => r.json())
+      .then((response) => response.json())
       .then((teamsArray) => {
         setTeams(teamsArray);
       });
@@ -42,10 +43,12 @@ function TeamPage() {
 
   return (
     <main>
-      <NewTeamForm onAddTeam={handleAddTeam} />
+      <NewTeamForm onAddTeam={handleAddTeam} 
+      />
       <Search searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <TeamList
         teams={displayedTeams}
+        
         onDeleteTeam={handleDeleteTeam}
         onUpdateTeam={handleUpdateTeam}
       />

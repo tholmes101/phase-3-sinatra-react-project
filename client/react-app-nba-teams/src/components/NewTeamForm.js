@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
+// Adds a new NBA team to the page by submitting the form
 function NewTeamForm({ onAddTeam }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [rank, setRank] = useState("");
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     fetch("http://localhost:9292/teams", {
       method: "POST",
       headers: {
@@ -18,7 +19,7 @@ function NewTeamForm({ onAddTeam }) {
         rank: rank,
       }),
     })
-      .then((r) => r.json())
+      .then((response) => response.json())
       .then((newTeam) => onAddTeam(newTeam));
   }
 
@@ -31,14 +32,14 @@ function NewTeamForm({ onAddTeam }) {
           name="name"
           placeholder="Team name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(event) => setName(event.target.value)}
         />
         <input
           type="text"
           name="image"
           placeholder="Image URL"
           value={image}
-          onChange={(e) => setImage(e.target.value)}
+          onChange={(event) => setImage(event.target.value)}
         />
         <input
           type="number"
@@ -46,7 +47,7 @@ function NewTeamForm({ onAddTeam }) {
           step="0"
           placeholder="Rank"
           value={rank}
-          onChange={(e) => setRank(parseFloat(e.target.value))}
+          onChange={(event) => setRank(parseFloat(event.target.value))}
         />
         <button type="submit">Add Team</button>
       </form>

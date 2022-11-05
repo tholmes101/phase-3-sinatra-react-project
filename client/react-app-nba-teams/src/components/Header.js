@@ -1,5 +1,6 @@
 import React from "react";
 
+// Displays the header.
 function Header() {
   return (
     <header>

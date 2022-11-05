@@ -1,5 +1,6 @@
 import React from "react";
 
+// Searches for a team by their name and see a filtered list of teams
 function Search({ searchTerm, onSearchChange }) {
   return (
     <div className="searchbar">
@@ -9,7 +10,7 @@ function Search({ searchTerm, onSearchChange }) {
         id="search"
         placeholder="Type a name to search..."
         value={searchTerm}
-        onChange={(e) => onSearchChange(e.target.value)}
+        onChange={(event) => onSearchChange(event.target.value)}
       />
     </div>
   );

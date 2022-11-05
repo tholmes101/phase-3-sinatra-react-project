@@ -2,7 +2,8 @@ import React from "react";
 import TeamCard from "./TeamCard";
 import {Card} from "semantic-ui-react"
 
-function TeamList({ teams, onDeleteTeam, onUpdateTeam,uniforms }) {
+// Builds a list of items for an NBA team card.
+function TeamList({ teams, onDeleteTeam, onUpdateTeam}) {
   return (
      <Card.Group itemsPerRow = {4} 
      className="cards">
