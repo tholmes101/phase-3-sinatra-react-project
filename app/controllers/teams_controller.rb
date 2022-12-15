@@ -1,8 +1,8 @@
 class TeamsController < ApplicationController
     set :default_content_type, 'application/json'
   
-    # reads all the teams and uniforms from the database
-    # returns a JSON response with an array of all the team and uniform data
+    # Reads all the teams and uniforms from the database
+    # Returns a JSON response with an array of all the team and uniform data
     get '/teams' do
       teams = Team.all
       teams.to_json(include: :uniforms)
