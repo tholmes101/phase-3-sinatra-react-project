@@ -1,7 +1,5 @@
 require 'sinatra'
 class SinatraWorker
-
-    set :default_content_type, 'application/json'
   
     # Reads all the teams and uniforms from the database
     # Returns a JSON response with an array of all the team and uniform data
