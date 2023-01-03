@@ -1,5 +1,4 @@
 require 'sinatra'
-class SinatraWorker
   
     # Reads all the teams and uniforms from the database
     # Returns a JSON response with an array of all the team and uniform data
@@ -26,5 +25,3 @@ class SinatraWorker
       team = Team.find(params[:id])
       team.destroy
     end      
-
-end
